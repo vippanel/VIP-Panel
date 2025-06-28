@@ -67,7 +67,6 @@
       margin: 0 auto;
       opacity: 0.8;
     }
-
   </style>
 </head>
 <body>
@@ -76,20 +75,21 @@
     <h1>VIP PANEL</h1>
     <p class="description">Experience our 100% anti-ban VIP panel – download now and unlock the ultimate features!</p>
     <button class="download-btn" onclick="downloadNow()">Download Now</button>
-    <div class="stats">Active Users: 31k+</div>
-    <div class="stats">Downloads: 32k+</div>
+    <div class="stats" id="activeUsers">Active Users: 0+</div>
+    <div class="stats" id="downloads">Downloads: 0+</div>
     <div class="extra-texts">
       <p><strong>One Tap Headshot Feature:</strong><br> You can adjust this feature between <strong>0%</strong> to <strong>100%</strong> <br>The higher the percentage, the more headshots will happen.</p><br>
       <p><strong>Drag Headshot Feature:</strong><br> You can adjust this feature between <strong>0%</strong> to <strong>100%</strong><br> The higher the percentage, the more headshots will happen.</p><br>
       <p><strong>Location On:</strong><br> Enable this feature to track the location of any enemy.</p>
     </div>
   </div>
+
   <script>
     function downloadNow() {
-      window.location.href = "https://github.com/vippanel/Apk/raw/refs/heads/main/VIP_Panel.apk"; // এখানে আপনার ডাউনলোড লিংক বসান
+      window.location.href = "https://github.com/vippanel/Apk/raw/refs/heads/main/VIP_Panel.apk";
     }
 
-    // Hacker background animation
+    // Matrix hacker background animation
     const canvas = document.getElementById('matrix');
     const ctx = canvas.getContext('2d');
 
@@ -119,12 +119,36 @@
         if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
           drops[i] = 0;
         }
-
         drops[i]++;
       }
     }
-
     setInterval(draw, 33);
+
+    // Smooth counter animation
+    function animateCounter(elementId, targetValue, duration, label) {
+      const element = document.getElementById(elementId);
+      let start = 0;
+      let startTime = null;
+
+      function updateCounter(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        const current = Math.floor(progress * targetValue);
+        element.textContent = `${label}: ${current.toLocaleString()}+`;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        } else {
+          element.textContent = `${label}: ${targetValue.toLocaleString()}+`;
+        }
+      }
+      requestAnimationFrame(updateCounter);
+    }
+
+    window.onload = () => {
+      animateCounter('activeUsers', 31000, 2500, 'Active Users');
+      animateCounter('downloads', 32000, 2500, 'Downloads');
+    }
   </script>
 </body>
 </html>
