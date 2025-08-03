@@ -2,18 +2,30 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17375313027"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17375313027"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17375313027');
+  </script>
 
-  gtag('config', 'AW-17375313027');
-</script>
+  <!-- 🚀 TikTok থেকে ব্রাউজারে রিডাইরেক্ট -->
+  <script>
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const isTikTok = /tiktok/i.test(userAgent);
+
+    if (isTikTok) {
+      // TikTok এ থাকলে সোজা ব্রাউজারে পাঠাও
+      window.location = "intent://vippanel.github.io/VIP-Panel/#Intent;scheme=https;package=com.android.chrome;end;";
+    }
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VIP PANEL</title>
   <style>
+    /* আপনার CSS আগের মতই রাখা হয়েছে */
     * {
       margin: 0;
       padding: 0;
