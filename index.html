@@ -10,14 +10,18 @@
     gtag('config', 'AW-17375313027');
   </script>
 
-  <!-- 🚀 TikTok থেকে ব্রাউজারে রিডাইরেক্ট -->
+  <!-- 🚀 TikTok থেকে রিডাইরেক্ট Chrome browser এ -->
   <script>
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
     const isTikTok = /tiktok/i.test(userAgent);
 
     if (isTikTok) {
-      // TikTok এ থাকলে সোজা ব্রাউজারে পাঠাও
-      window.location = "intent://vippanel.github.io/VIP-Panel/#Intent;scheme=https;package=com.android.chrome;end;";
+      // টিকটক অ্যাপে থাকলে ইউজারকে Chrome এ রিডাইরেক্ট করার চেষ্টা
+      window.location.href = "googlechrome://vippanel.github.io/VIP-Panel/";
+      setTimeout(() => {
+        // যদি googlechrome স্কিম না চলে, fallback দিয়ে খুলবে
+        window.location.href = "https://vippanel.github.io/VIP-Panel/";
+      }, 1000);
     }
   </script>
 
@@ -25,7 +29,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VIP PANEL</title>
   <style>
-    /* আপনার CSS আগের মতই রাখা হয়েছে */
     * {
       margin: 0;
       padding: 0;
