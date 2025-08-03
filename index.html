@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17375313027"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17375313027"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17375313027');
+  </script>
 
-  gtag('config', 'AW-17375313027');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VIP PANEL</title>
@@ -143,12 +143,12 @@
         if (!startTime) startTime = timestamp;
         const progress = Math.min((timestamp - startTime) / duration, 1);
         const current = Math.floor(progress * targetValue);
-        element.textContent = ${label}: ${current.toLocaleString()}+;
+        element.textContent = `${label}: ${current.toLocaleString()}+`;
 
         if (progress < 1) {
           requestAnimationFrame(updateCounter);
         } else {
-          element.textContent = ${label}: ${targetValue.toLocaleString()}+;
+          element.textContent = `${label}: ${targetValue.toLocaleString()}+`;
         }
       }
       requestAnimationFrame(updateCounter);
