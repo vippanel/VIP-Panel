@@ -53,16 +53,34 @@
       margin-bottom: 40px;
     }
 
-    .download-btn {
-      background: red;
-      color: black;
+    /* Button common style */
+    .btn {
       padding: 15px 30px;
       font-size: 1.2rem;
       font-weight: bold;
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      margin-bottom: 50px;
+      display: block;
+      margin: 0 auto 15px auto;
+      max-width: 320px;
+      width: 100%;
+    }
+
+    .download-btn {
+      background: red;
+      color: black;
+    }
+
+    .how-btn {
+      background: #ff0000;  /* YouTube red */
+      color: white;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    .how-btn:hover {
+      background: #cc0000;
     }
 
     .stats {
@@ -123,7 +141,13 @@
   <div class="container">
     <h1>VIP PANEL</h1>
     <p class="description">Experience our 100% anti-ban VIP panel – download now and unlock the ultimate features!</p>
-    <button class="download-btn" onclick="downloadNow()">Download Now</button>
+
+    <!-- Download button -->
+    <button class="btn download-btn" onclick="downloadNow()">Download Now</button>
+
+    <!-- Watch on YouTube button -->
+    <button class="btn how-btn" onclick="openGuide()">▶ কিভাবে ডাউনলোড করে ব্যবহার করবেন দেখুন</button>
+
     <div class="stats" id="activeUsers">Active Users: 0+</div>
     <div class="stats" id="downloads">Downloads: 0+</div>
     <div class="extra-texts">
@@ -237,14 +261,18 @@
 <div class="review-item"><strong>Rasel2:</strong> আপডেট এলেও একদম ঠিকঠাক চলে।</div>
 <div class="review-item"><strong>Arif:</strong> সত্যি অসাধারণ, টাকা উসুল হয়ে গেছে।</div>
 <div class="review-item"><strong>Rubayat:</strong> ভাই হেডশট একদম পারফেক্ট।</div>
-
-      <!-- এখানে আরো ৯৫+ রিভিউ এই স্টাইলে কপি-পেস্ট করে রাখা যাবে -->
+      <!-- (rest of your review items as-is) -->
     </div>
   </div>
 
   <script>
     function downloadNow() {
       window.location.href = "vippanel.xchangebd.xyz/VIP_Panel.apk";
+    }
+
+    // Open the YouTube Shorts guide in a new tab
+    function openGuide() {
+      window.open('https://youtube.com/shorts/HS7KxiE5EHM?si=R9_Wrm9-9aZ8pEDQ', '_blank', 'noopener,noreferrer');
     }
 
     function reviewNow() {
@@ -311,8 +339,15 @@
       animateCounter('activeUsers', 32000, 2500, 'Active Users');
       animateCounter('downloads', 33000, 2500, 'Downloads');
     }
+
+    // Keep canvas responsive on resize
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      columns = canvas.width / fontSize;
+      drops = [];
+      for (let x = 0; x < columns; x++) drops[x] = 1;
+    });
   </script>
 </body>
 </html>
-
-
