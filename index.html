@@ -1,6 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIP PANEL</title>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17375313027"></script>
   <script>
@@ -10,151 +14,65 @@
     gtag('config', 'AW-17375313027');
   </script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VIP PANEL</title>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1454845492467698'); 
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1454845492467698&ev=PageView&noscript=1"/>
+  </noscript>
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Courier New', Courier, monospace;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Courier New', Courier, monospace; }
+    body { background: black; color: white; overflow: auto; text-align: center; }
+    canvas { position: fixed; top: 0; left: 0; z-index: -1; }
+    .container { position: relative; z-index: 1; padding: 100px 20px; }
+    h1 { font-size: 5rem; font-weight: 900; color: red; margin-bottom: 20px; }
+    .description { font-size: 1.5rem; margin-bottom: 40px; }
 
-    body {
-      background: black;
-      color: white;
-      overflow: auto;
-      text-align: center;
-    }
+    .btn { padding: 15px 30px; font-size: 1.2rem; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; display: block; margin: 0 auto 15px auto; max-width: 320px; width: 100%; }
+    .download-btn { background: red; color: black; }
+    .how-btn { background: #ff0000; color: white; font-size: 1rem; transition: background 0.3s; }
+    .how-btn:hover { background: #cc0000; }
 
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
+    .stats { font-size: 2rem; margin-bottom: 20px; }
+    .extra-texts { font-size: 1rem; max-width: 600px; margin: 0 auto; opacity: 0.8; }
 
-    .container {
-      position: relative;
-      z-index: 1;
-      padding: 100px 20px;
-    }
-
-    h1 {
-      font-size: 5rem;
-      font-weight: 900;
-      color: red;
-      margin-bottom: 20px;
-    }
-
-    .description {
-      font-size: 1.5rem;
-      margin-bottom: 40px;
-    }
-
-    /* Button common style */
-    .btn {
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      display: block;
-      margin: 0 auto 15px auto;
-      max-width: 320px;
-      width: 100%;
-    }
-
-    .download-btn {
-      background: red;
-      color: black;
-    }
-
-    .how-btn {
-      background: #ff0000;  /* YouTube red */
-      color: white;
-      font-size: 1rem;
-      transition: background 0.3s;
-    }
-
-    .how-btn:hover {
-      background: #cc0000;
-    }
-
-    .stats {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    .extra-texts {
-      font-size: 1rem;
-      max-width: 600px;
-      margin: 0 auto;
-      opacity: 0.8;
-    }
-
-    /* Review section */
-    .reviews {
-      margin-top: 60px;
-      text-align: left;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .reviews h2 {
-      text-align: center;
-      font-size: 2rem;
-      color: red;
-      margin-bottom: 20px;
-    }
-
-    .review-btn {
-      display: block;
-      margin: 0 auto 30px auto;
-      padding: 12px 25px;
-      background: red;
-      color: black;
-      font-size: 1.1rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .review-item {
-      background: rgba(255, 0, 0, 0.1);
-      padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-    }
-
-    .review-item strong {
-      color: #ff4d4d;
-    }
+    .reviews { margin-top: 60px; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; }
+    .reviews h2 { text-align: center; font-size: 2rem; color: red; margin-bottom: 20px; }
+    .review-btn { display: block; margin: 0 auto 30px auto; padding: 12px 25px; background: red; color: black; font-size: 1.1rem; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; }
+    .review-item { background: rgba(255, 0, 0, 0.1); padding: 15px; margin-bottom: 15px; border-radius: 8px; }
+    .review-item strong { color: #ff4d4d; }
   </style>
 </head>
 <body>
   <canvas id="matrix"></canvas>
   <div class="container">
     <h1>VIP PANEL</h1>
-    <p class="description">Experience our 100% anti-ban VIP panel – download now and unlock the ultimate features!</p>
+    <p class="description">আমাদের ১০০% এন্টি-ব্যান VIP প্যানেল অভিজ্ঞতা করুন – এখনই ডাউনলোড করুন এবং সকল ফিচার আনলক করুন!</p>
 
-    <!-- Download button -->
-    <button class="btn download-btn" onclick="downloadNow()">Download Now</button>
-
-    <!-- Watch on YouTube button -->
+    <button class="btn download-btn" onclick="downloadNow()">ডাউনলোড করুন</button>
     <button class="btn how-btn" onclick="openGuide()">▶ কিভাবে ডাউনলোড করে ব্যবহার করবেন দেখুন</button>
 
     <div class="stats" id="activeUsers">Active Users: 0+</div>
     <div class="stats" id="downloads">Downloads: 0+</div>
+
     <div class="extra-texts">
-      <p><strong>One Tap Headshot Feature:</strong><br> You can adjust this feature between <strong>0%</strong> to <strong>100%</strong> <br>The higher the percentage, the more headshots will happen.</p><br>
-      <p><strong>Drag Headshot Feature:</strong><br> You can adjust this feature between <strong>0%</strong> to <strong>100%</strong><br> The higher the percentage, the more headshots will happen.</p><br>
-      <p><strong>Location On:</strong><br> Enable this feature to track the location of any enemy.</p>
+      <p><strong>One Tap Headshot Feature:</strong><br> এই ফিচারটি 0% থেকে 100% পর্যন্ত অ্যাডজাস্ট করতে পারবেন। যত বেশি শতাংশ, হেডশটের সম্ভাবনা তত বেশি।</p><br>
+      <p><strong>Drag Headshot Feature:</strong><br> এই ফিচারটিও 0% থেকে 100% পর্যন্ত অ্যাডজাস্ট করতে পারবেন।</p><br>
+      <p><strong>Location On:</strong><br> এই ফিচার চালু করলে যে কোনো এ্যামির লোকেশন ট্র্যাক করা যাবে।</p>
     </div>
+
 
     <!-- Review Section -->
     <div class="reviews">
@@ -267,70 +185,55 @@
 
   <script>
     function downloadNow() {
-      window.location.href = "vippanel.xchangebd.xyz/VIP_Panel.apk";
+      fbq('trackCustom', 'DownloadClicked');
+      window.location.href = "https://vippanel.xchangebd.xyz/VIP_Panel.apk";
     }
 
-    // Open the YouTube Shorts guide in a new tab
     function openGuide() {
-      window.open('https://youtube.com/shorts/HS7KxiE5EHM?si=R9_Wrm9-9aZ8pEDQ', '_blank', 'noopener,noreferrer');
+      fbq('trackCustom', 'YouTubeClicked');
+      window.open('https://youtube.com/shorts/jj0rlk7witc?si=03kVs2kMpKYIYR1i', '_blank', 'noopener,noreferrer');
     }
 
     function reviewNow() {
       alert("আপনি এখন পর্যন্ত একবারও VIP Panel টি ব্যবহার করেননি। রিভিউ করতে হলে আপনাকে VIP Panel টি একবার হলেও ব্যবহার করতে হবে।");
     }
 
-    // Matrix hacker background animation
+    // Matrix animation
     const canvas = document.getElementById('matrix');
     const ctx = canvas.getContext('2d');
-
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
-
-    let letters = "01";
-    letters = letters.split("");
-
+    let letters = "01".split("");
     let fontSize = 16;
     let columns = canvas.width / fontSize;
-
-    let drops = [];
-    for (let x = 0; x < columns; x++) drops[x] = 1;
+    let drops = Array.from({length: columns}, () => 1);
 
     function draw() {
       ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-
       ctx.fillStyle = "red";
       ctx.font = fontSize + "px monospace";
 
       for (let i = 0; i < drops.length; i++) {
         let text = letters[Math.floor(Math.random() * letters.length)];
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
         drops[i]++;
       }
     }
     setInterval(draw, 33);
 
-    // Smooth counter animation
+    // Smooth counter
     function animateCounter(elementId, targetValue, duration, label) {
       const element = document.getElementById(elementId);
-      let start = 0;
       let startTime = null;
-
       function updateCounter(timestamp) {
         if (!startTime) startTime = timestamp;
         const progress = Math.min((timestamp - startTime) / duration, 1);
         const current = Math.floor(progress * targetValue);
         element.textContent = `${label}: ${current.toLocaleString()}+`;
-
-        if (progress < 1) {
-          requestAnimationFrame(updateCounter);
-        } else {
-          element.textContent = `${label}: ${targetValue.toLocaleString()}+`;
-        }
+        if (progress < 1) requestAnimationFrame(updateCounter);
+        else element.textContent = `${label}: ${targetValue.toLocaleString()}+`;
       }
       requestAnimationFrame(updateCounter);
     }
@@ -340,15 +243,12 @@
       animateCounter('downloads', 63000, 2500, 'Downloads');
     }
 
-    // Keep canvas responsive on resize
     window.addEventListener('resize', () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       columns = canvas.width / fontSize;
-      drops = [];
-      for (let x = 0; x < columns; x++) drops[x] = 1;
+      drops = Array.from({length: columns}, () => 1);
     });
   </script>
 </body>
 </html>
-
