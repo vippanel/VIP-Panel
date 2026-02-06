@@ -1,268 +1,431 @@
 <!DOCTYPE html>
 <html lang="bn">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VIP PANEL</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VIP PANEL</title>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17375313027"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-17375313027');
-  </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17375313027"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-17375313027');
+    </script>
 
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s){
-      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)
-    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1454845492467698'); 
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-         src="https://www.facebook.com/tr?id=1454845492467698&ev=PageView&noscript=1"/>
-  </noscript>
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1454845492467698');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1454845492467698&ev=PageView&noscript=1" />
+    </noscript>
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Courier New', Courier, monospace; }
-    body { background: black; color: white; overflow: auto; text-align: center; }
-    canvas { position: fixed; top: 0; left: 0; z-index: -1; }
-    .container { position: relative; z-index: 1; padding: 100px 20px; }
-    h1 { font-size: 5rem; font-weight: 900; color: red; margin-bottom: 20px; }
-    .description { font-size: 1.5rem; margin-bottom: 40px; }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
 
-    .btn { padding: 15px 30px; font-size: 1.2rem; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; display: block; margin: 0 auto 15px auto; max-width: 320px; width: 100%; }
-    .download-btn { background: red; color: black; }
-    .how-btn { background: #ff0000; color: white; font-size: 1rem; transition: background 0.3s; }
-    .how-btn:hover { background: #cc0000; }
+        body {
+            background: black;
+            color: white;
+            overflow: auto;
+            text-align: center;
+        }
 
-    .stats { font-size: 2rem; margin-bottom: 20px; }
-    .extra-texts { font-size: 1rem; max-width: 600px; margin: 0 auto; opacity: 0.8; }
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
 
-    .reviews { margin-top: 60px; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; }
-    .reviews h2 { text-align: center; font-size: 2rem; color: red; margin-bottom: 20px; }
-    .review-btn { display: block; margin: 0 auto 30px auto; padding: 12px 25px; background: red; color: black; font-size: 1.1rem; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; }
-    .review-item { background: rgba(255, 0, 0, 0.1); padding: 15px; margin-bottom: 15px; border-radius: 8px; }
-    .review-item strong { color: #ff4d4d; }
-  </style>
+        .container {
+            position: relative;
+            z-index: 1;
+            padding: 100px 20px;
+        }
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17375313027">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            color: red;
+            margin-bottom: 20px;
+        }
 
-  gtag('config', 'AW-17375313027');
-</script>
-  
+        .description {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto 15px auto;
+            max-width: 320px;
+            width: 100%;
+        }
+
+        .download-btn {
+            background: red;
+            color: black;
+        }
+
+        .how-btn {
+            background: #ff0000;
+            color: white;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .how-btn:hover {
+            background: #cc0000;
+        }
+
+        .stats {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .extra-texts {
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.8;
+        }
+
+        .reviews {
+            margin-top: 60px;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .reviews h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: red;
+            margin-bottom: 20px;
+        }
+
+        .review-btn {
+            display: block;
+            margin: 0 auto 30px auto;
+            padding: 12px 25px;
+            background: red;
+            color: black;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .review-item {
+            background: rgba(255, 0, 0, 0.1);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .review-item strong {
+            color: #ff4d4d;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .whatsapp-float img {
+            width: 35px;
+            height: 35px;
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17375313027">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-17375313027');
+    </script>
+
 </head>
+
 <body>
-  <canvas id="matrix"></canvas>
-  <div class="container">
-    <h1>VIP PANEL</h1>
-    <p class="description">আমাদের ১০০% এন্টি-ব্যান VIP প্যানেল অভিজ্ঞতা করুন – এখনই ডাউনলোড করুন এবং সকল ফিচার আনলক করুন!</p>
+    <canvas id="matrix"></canvas>
+    <div class="container">
+        <h1>VIP PANEL</h1>
+        <p class="description">আমাদের ১০০% এন্টি-ব্যান VIP প্যানেল অভিজ্ঞতা করুন – এখনই ডাউনলোড করুন এবং সকল ফিচার আনলক
+            করুন!</p>
 
-    <button class="btn download-btn" onclick="downloadNow()">ডাউনলোড করুন</button>
-    <button class="btn how-btn" onclick="openGuide()">▶ কিভাবে ডাউনলোড করে ব্যবহার করবেন দেখুন</button>
+        <button class="btn download-btn" onclick="downloadNow()">ডাউনলোড করুন</button>
+        <button class="btn how-btn" onclick="openGuide()">▶ কিভাবে ডাউনলোড করে ব্যবহার করবেন দেখুন</button>
 
-    <div class="stats" id="activeUsers">Active Users: 0+</div>
-    <div class="stats" id="downloads">Downloads: 0+</div>
+        <div class="stats" id="activeUsers">Active Users: 0+</div>
+        <div class="stats" id="downloads">Downloads: 0+</div>
 
-    <div class="extra-texts">
-      <p><strong>One Tap Headshot Feature:</strong><br> এই ফিচারটি 0% থেকে 100% পর্যন্ত অ্যাডজাস্ট করতে পারবেন। যত বেশি শতাংশ, হেডশটের সম্ভাবনা তত বেশি।</p><br>
-      <p><strong>Drag Headshot Feature:</strong><br> এই ফিচারটিও 0% থেকে 100% পর্যন্ত অ্যাডজাস্ট করতে পারবেন।</p><br>
-      <p><strong>Location On:</strong><br> এই ফিচার চালু করলে যে কোনো এ্যামির লোকেশন ট্র্যাক করা যাবে।</p>
+        <div class="extra-texts">
+            <p><strong>One Tap Headshot Feature:</strong><br> এই ফিচারটি 0% থেকে 100% পর্যন্ত অ্যাডজাস্ট করতে পারবেন। যত
+                বেশি শতাংশ, হেডশটের সম্ভাবনা তত বেশি।</p><br>
+            <p><strong>Drag Headshot Feature:</strong><br> এই ফিচারটিও 0% থেকে 100% পর্যন্ত অ্যাডজাস্ট করতে পারবেন।</p>
+            <br>
+            <p><strong>Location On:</strong><br> এই ফিচার চালু করলে যে কোনো এ্যামির লোকেশন ট্র্যাক করা যাবে।</p>
+        </div>
+
+        <!-- Floating WhatsApp Button -->
+        <div class="whatsapp-float" onclick="openWhatsApp()">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+        </div>
+
+
+
+        <!-- Review Section -->
+        <div class="reviews">
+            <h2>ইউজার রিভিউ লাস্ট ১০০ টি</h2>
+            <button class="review-btn" onclick="reviewNow()">রিভিউ করুন</button>
+
+            <!-- Example reviews -->
+            <div class="review-item"><strong>Rahim:</strong> আজ দুই মাস ধরে এই প্যানেল্টি ব্যবহার করছি, আলহামদুলিল্লাহ
+                সেইরকম হেডশট লাগে।</div>
+            <div class="review-item"><strong>Karim:</strong> এই প্যানেল আসলেই পুরোপুরি এন্টি-ব্যান, মজা করে খেলতেছি
+                অনেকদিন ধরে, আইডির কোনো সমস্যা হয়নি।</div>
+            <div class="review-item"><strong>Hasan:</strong> ধন্যবাদ ভাই, এমন ভালো একটা প্যানেল দেওয়ার জন্য এত কম
+                টাকায়!</div>
+            <div class="review-item"><strong>Rafi:</strong> একদম পারফেক্ট কাজ করছে, হেডশট আর লোকেশন দুইটাই অসাধারণ।
+            </div>
+            <div class="review-item"><strong>Sohan:</strong> একাউন্ট ক্রিয়েট করার পর থেকে একদম স্মুথলি খেলতেছি, একটুও
+                সমস্যা নেই।</div>
+
+            <div class="review-item"><strong>Imran:</strong> আপডেট হওয়ার পর মাত্র এক ঘন্টার মধ্যেই নতুন ফিচার চালু পেয়ে
+                গেছি, একদম দারুণ!</div>
+            <div class="review-item"><strong>Nazmul:</strong> ভাই হেডশটের একদম আলাদা লেভেল, গেমটা নতুন করে খেলতে ইচ্ছা
+                করে।</div>
+            <div class="review-item"><strong>Shakil:</strong> লোকেশন ফিচার এতটাই একুরেট যে স্কোয়াড সবসময় এগিয়ে থাকে।
+            </div>
+            <div class="review-item"><strong>Farhan:</strong> কয়েক মাস ধরে ব্যবহার করছি, কোনো আইডি ব্যান হয়নি, খুবই সেফ।
+            </div>
+            <div class="review-item"><strong>Rasel:</strong> কম টাকায় এমন পার্মানেন্ট প্যানেল আর কোথাও পাইনি। ধন্যবাদ
+                ভাই।</div>
+
+            <div class="review-item"><strong>Sajib:</strong> লোকেশন অন করলেই সামনে কে আছে দেখে ফেলি, দারুণ কাজ করে।
+            </div>
+            <div class="review-item"><strong>Tuhin:</strong> ভিআইপি প্যানেল সত্যি অসাধারণ, কোনো ল্যাগ নেই, একদম স্মুথ।
+            </div>
+            <div class="review-item"><strong>Mizan:</strong> একবার একাউন্ট খুলে দিলেই ঝামেলা শেষ, তারপর যত খুশি খেলো।
+            </div>
+            <div class="review-item"><strong>Rony:</strong> আপডেটের ভেতর এত দ্রুত কাজ করা প্যানেল আমি আর দেখিনি।</div>
+
+            <div class="review-item"><strong>Kamal:</strong> ভাই একদম লেজেন্ডারি প্যানেল, সবকিছু নিখুঁতভাবে কাজ করে।
+            </div>
+            <div class="review-item"><strong>Parvez:</strong> হেডশটের সাথে লোকেশন কম্বিনেশন একদম মাস্টারক্লাস।</div>
+            <div class="review-item"><strong>Jahid:</strong> আমার টিমমেটরাও অবাক হয়ে গেছে, এত পারফেক্ট খেলা কখনও হয়নি।
+            </div>
+            <div class="review-item"><strong>Sabbir:</strong> এই দামে এমন জিনিস পেয়ে আমি ভীষণ খুশি।</div>
+            <div class="review-item"><strong>Shanto:</strong> ২৪ ঘন্টাই ব্যবহার করি, কোনো সমস্যা হয়নি, একদম সেফ।</div>
+
+            <div class="review-item"><strong>Arman:</strong> কয়েকদিন ধরে টেস্ট করছি, এন্টি-ব্যান সত্যি সত্যি কাজ করে।
+            </div>
+            <div class="review-item"><strong>Rubel:</strong> গেম আপডেট হতেই দেড় ঘন্টার মধ্যে নতুন ফিচার চালু হয়ে যায়,
+                একদম ফাটাফাটি।</div>
+            <div class="review-item"><strong>Milton:</strong> একবার চালু করলে আর বন্ধ করার ইচ্ছাই হয় না।</div>
+            <div class="review-item"><strong>Tamim:</strong> ভাই একদম গোল্ড লেভেল সার্ভিস, কৃতজ্ঞতা।</div>
+            <div class="review-item"><strong>Nayeem:</strong> আমার আইডি এখনও সেফ আছে, হেডশটগুলো দারুণ লাগছে।</div>
+
+            <div class="review-item"><strong>Sumon:</strong> লোকেশন ফিচার সবসময় সঠিক দেখায়, সত্যি মুগ্ধ।</div>
+            <div class="review-item"><strong>Biplob:</strong> ফ্রিতে টেস্ট করার পরেই কিনেছি, টাকা উসুল হয়ে গেছে।</div>
+            <div class="review-item"><strong>Anik:</strong> ব্যবহার সহজ, কোনো জটিলতা নাই, একদম ইউজার ফ্রেন্ডলি।</div>
+            <div class="review-item"><strong>Mehedi:</strong> আমার ভাইও ব্যবহার করছে, আমরা দুজনেই খুশি।</div>
+            <div class="review-item"><strong>Shuvo:</strong> প্রতিদিন খেলছি, কোনো সমস্যাই হয়নি এখনো।</div>
+
+            <div class="review-item"><strong>Masum:</strong> এমন পার্মানেন্ট প্যানেল আগে দেখিনি, চমৎকার জিনিস।</div>
+            <div class="review-item"><strong>Rakib:</strong> নতুন আপডেটে প্রথমে ভয় পেয়েছিলাম, কিন্তু সব ঠিকঠাক আছে।
+            </div>
+            <div class="review-item"><strong>Nahid:</strong> একদম দারুণ, কম টাকায় ভিআইপি ফিল পাচ্ছি।</div>
+            <div class="review-item"><strong>Adnan:</strong> এইটা ছাড়া এখন আর গেম খেলতে ইচ্ছাই করে না।</div>
+            <div class="review-item"><strong>Sajid:</strong> অসাধারণ ফিচার, এক কথায় বেস্ট।</div>
+
+            <!-- 50 done above, continue with 51-100 -->
+            <div class="review-item"><strong>Reza:</strong> লোকেশন একুরেট, হেডশট নির্ভুল, দুইটাই ব্যবহার করে আসল মজা
+                পাই।</div>
+            <div class="review-item"><strong>Jewel:</strong> আপডেট সাপোর্ট একদম ফাস্ট, গেম আপডেট হলেই সাথে সাথে চলে।
+            </div>
+            <div class="review-item"><strong>Shahin:</strong> টিমওয়ার্কে একদম লেজেন্ডারি সাহায্য করে লোকেশন ফিচার।</div>
+            <div class="review-item"><strong>Maruf:</strong> একাউন্ট সেফ রাখার জন্য আলাদা কিছুই লাগে না, সব অটো।</div>
+
+            <div class="review-item"><strong>Antor:</strong> হেডশট ফিচার বন্ধ করলে গেম নরমাল থাকে, চাইলে ব্যালেন্সড খেলা
+                যায়।</div>
+            <div class="review-item"><strong>Tareq:</strong> একদম বাজেট ফ্রেন্ডলি প্যানেল, সবার জন্য বেস্ট।</div>
+            <div class="review-item"><strong>Habib:</strong> আমি যতদিন ব্যবহার করেছি, একবারও ব্যান হইনি।</div>
+            <div class="review-item"><strong>Emon:</strong> সত্যি বলছি, এত ভালো জিনিস এত কম দামে পাওয়া যাবে ভাবিনি।
+            </div>
+
+            <div class="review-item"><strong>Foysal:</strong> গেমের আপডেট এলেই খুব দ্রুত কাজ শুরু হয়।</div>
+            <div class="review-item"><strong>Hasib:</strong> প্রতিদিন ব্যবহার করছি, একদম চমৎকার।</div>
+            <div class="review-item"><strong>Iqbal:</strong> আমার টিম এইটা ছাড়া গেম খেলতে চায় না।</div>
+            <div class="review-item"><strong>Ridoy:</strong> ভাই একদম দারুণ, হেডশটের মজা অন্যরকম।</div>
+            <div class="review-item"><strong>Rakibul:</strong> লোকেশন দেখে প্ল্যানিং করতে সুবিধা হয়।</div>
+
+            <div class="review-item"><strong>Shamim:</strong> আমার অভিজ্ঞতায় এটা এখন পর্যন্ত সেরা প্যানেল।</div>
+            <div class="review-item"><strong>Hridoy:</strong> কয়েকজনকে সাজেস্ট করেছি, সবাই খুশি।</div>
+            <div class="review-item"><strong>Sabbir2:</strong> ব্যান হওয়ার ভয় নাই, নিশ্চিন্তে ব্যবহার করো।</div>
+            <div class="review-item"><strong>Manik:</strong> একদম সেফলি খেলা যায়, দারুণ জিনিস।</div>
+            <div class="review-item"><strong>Jony:</strong> অসাধারণ অভিজ্ঞতা, ধন্যবাদ ভাই।</div>
+
+            <div class="review-item"><strong>Ashik:</strong> লোকেশন ফিচার সবসময় সঠিকভাবে কাজ করছে।</div>
+            <div class="review-item"><strong>Shafiq:</strong> আমার ছোট ভাইও ব্যবহার করছে, মজা পাচ্ছে।</div>
+            <div class="review-item"><strong>Rasel2:</strong> আপডেট এলেও একদম ঠিকঠাক চলে।</div>
+            <div class="review-item"><strong>Arif:</strong> সত্যি অসাধারণ, টাকা উসুল হয়ে গেছে।</div>
+            <div class="review-item"><strong>Rubayat:</strong> ভাই হেডশট একদম পারফেক্ট।</div>
+
+            <div class="review-item"><strong>Sami:</strong> একাউন্ট ওপেন করার পর থেকেই সব ফিচার এক্টিভ হয়ে গেছে।</div>
+            <div class="review-item"><strong>Asif:</strong> আমি প্রতিদিন কয়েক ঘন্টা খেলি, কোনো ল্যাগ নাই।</div>
+            <div class="review-item"><strong>Riyad:</strong> হেডশটের সঠিকতা দেখে অবাক হয়ে গেছি।</div>
+            <div class="review-item"><strong>Mahin:</strong> লোকেশন একবারও ভুল দেখায়নি, দারুণ।</div>
+            <div class="review-item"><strong>Sarif:</strong> এক কথায় অসাধারণ, খুব ভালো কাজ করছে।</div>
+
+            <div class="review-item"><strong>Belal:</strong> আমার স্কোয়াডে সবাই এখন এটা ব্যবহার করছে।</div>
+            <div class="review-item"><strong>Noman:</strong> ভিআইপি প্যানেল সত্যিই নামের মতো ভিআইপি।</div>
+            <div class="review-item"><strong>Tanvir:</strong> সার্ভিস একদম ফাটাফাটি, খুশি হয়েছি।</div>
+            <div class="review-item"><strong>Shahriar:</strong> আইডি কোনো সমস্যা হয়নি, নিরাপদ।</div>
+            <div class="review-item"><strong>Azim:</strong> টাকার তুলনায় এটা অনেক বড় পাওয়া।</div>
+
+            <div class="review-item"><strong>Foysal:</strong> গেমের আপডেট এলেই খুব দ্রুত কাজ শুরু হয়।</div>
+            <div class="review-item"><strong>Hasib:</strong> প্রতিদিন ব্যবহার করছি, একদম চমৎকার।</div>
+            <div class="review-item"><strong>Iqbal:</strong> আমার টিম এইটা ছাড়া গেম খেলতে চায় না।</div>
+            <div class="review-item"><strong>Ridoy:</strong> ভাই একদম দারুণ, হেডশটের মজা অন্যরকম।</div>
+            <div class="review-item"><strong>Rakibul:</strong> লোকেশন দেখে প্ল্যানিং করতে সুবিধা হয়।</div>
+
+            <div class="review-item"><strong>Shamim:</strong> আমার অভিজ্ঞতায় এটা এখন পর্যন্ত সেরা প্যানেল।</div>
+            <div class="review-item"><strong>Hridoy:</strong> কয়েকজনকে সাজেস্ট করেছি, সবাই খুশি।</div>
+            <div class="review-item"><strong>Sabbir2:</strong> ব্যান হওয়ার ভয় নাই, নিশ্চিন্তে ব্যবহার করো।</div>
+            <div class="review-item"><strong>Manik:</strong> একদম সেফলি খেলা যায়, দারুণ জিনিস।</div>
+            <div class="review-item"><strong>Jony:</strong> অসাধারণ অভিজ্ঞতা, ধন্যবাদ ভাই।</div>
+
+            <div class="review-item"><strong>Ashik:</strong> লোকেশন ফিচার সবসময় সঠিকভাবে কাজ করছে।</div>
+            <div class="review-item"><strong>Shafiq:</strong> আমার ছোট ভাইও ব্যবহার করছে, মজা পাচ্ছে।</div>
+            <div class="review-item"><strong>Rasel2:</strong> আপডেট এলেও একদম ঠিকঠাক চলে।</div>
+            <div class="review-item"><strong>Arif:</strong> সত্যি অসাধারণ, টাকা উসুল হয়ে গেছে।</div>
+            <div class="review-item"><strong>Rubayat:</strong> ভাই হেডশট একদম পারফেক্ট।</div>
+            <!-- (rest of your review items as-is) -->
+        </div>
     </div>
 
+    <script>
+        function downloadNow() {
+            fbq('trackCustom', 'DownloadClicked');
+            window.location.href = "https://github.com/vippanel/Apk/raw/refs/heads/main/VIP_Panel.apk";
+        }
 
-    <!-- Review Section -->
-    <div class="reviews">
-      <h2>ইউজার রিভিউ লাস্ট ১০০ টি</h2>
-      <button class="review-btn" onclick="reviewNow()">রিভিউ করুন</button>
-      
-      <!-- Example reviews -->
-      <div class="review-item"><strong>Rahim:</strong> আজ দুই মাস ধরে এই প্যানেল্টি ব্যবহার করছি, আলহামদুলিল্লাহ সেইরকম হেডশট লাগে।</div>
-      <div class="review-item"><strong>Karim:</strong> এই প্যানেল আসলেই পুরোপুরি এন্টি-ব্যান, মজা করে খেলতেছি অনেকদিন ধরে, আইডির কোনো সমস্যা হয়নি।</div>
-      <div class="review-item"><strong>Hasan:</strong> ধন্যবাদ ভাই, এমন ভালো একটা প্যানেল দেওয়ার জন্য এত কম টাকায়!</div>
-      <div class="review-item"><strong>Rafi:</strong> একদম পারফেক্ট কাজ করছে, হেডশট আর লোকেশন দুইটাই অসাধারণ।</div>
-      <div class="review-item"><strong>Sohan:</strong> একাউন্ট ক্রিয়েট করার পর থেকে একদম স্মুথলি খেলতেছি, একটুও সমস্যা নেই।</div>
+        function openGuide() {
+            fbq('trackCustom', 'YouTubeClicked');
+            window.open('https://youtube.com/shorts/jj0rlk7witc?si=03kVs2kMpKYIYR1i', '_blank', 'noopener,noreferrer');
+        }
 
-<div class="review-item"><strong>Imran:</strong> আপডেট হওয়ার পর মাত্র এক ঘন্টার মধ্যেই নতুন ফিচার চালু পেয়ে গেছি, একদম দারুণ!</div>
-<div class="review-item"><strong>Nazmul:</strong> ভাই হেডশটের একদম আলাদা লেভেল, গেমটা নতুন করে খেলতে ইচ্ছা করে।</div>
-<div class="review-item"><strong>Shakil:</strong> লোকেশন ফিচার এতটাই একুরেট যে স্কোয়াড সবসময় এগিয়ে থাকে।</div>
-<div class="review-item"><strong>Farhan:</strong> কয়েক মাস ধরে ব্যবহার করছি, কোনো আইডি ব্যান হয়নি, খুবই সেফ।</div>
-<div class="review-item"><strong>Rasel:</strong> কম টাকায় এমন পার্মানেন্ট প্যানেল আর কোথাও পাইনি। ধন্যবাদ ভাই।</div>
+        function reviewNow() {
+            alert("আপনি এখন পর্যন্ত একবারও VIP Panel টি ব্যবহার করেননি। রিভিউ করতে হলে আপনাকে VIP Panel টি একবার হলেও ব্যবহার করতে হবে।");
+        }
 
-<div class="review-item"><strong>Sajib:</strong> লোকেশন অন করলেই সামনে কে আছে দেখে ফেলি, দারুণ কাজ করে।</div>
-<div class="review-item"><strong>Tuhin:</strong> ভিআইপি প্যানেল সত্যি অসাধারণ, কোনো ল্যাগ নেই, একদম স্মুথ।</div>
-<div class="review-item"><strong>Mizan:</strong> একবার একাউন্ট খুলে দিলেই ঝামেলা শেষ, তারপর যত খুশি খেলো।</div>
-<div class="review-item"><strong>Rony:</strong> আপডেটের ভেতর এত দ্রুত কাজ করা প্যানেল আমি আর দেখিনি।</div>
+        function openWhatsApp() {
+            var phoneNumber = "8801627487639"; // তোমার নাম্বার
+            var message = "Hello, I want to know more about your service";
 
-<div class="review-item"><strong>Kamal:</strong> ভাই একদম লেজেন্ডারি প্যানেল, সবকিছু নিখুঁতভাবে কাজ করে।</div>
-<div class="review-item"><strong>Parvez:</strong> হেডশটের সাথে লোকেশন কম্বিনেশন একদম মাস্টারক্লাস।</div>
-<div class="review-item"><strong>Jahid:</strong> আমার টিমমেটরাও অবাক হয়ে গেছে, এত পারফেক্ট খেলা কখনও হয়নি।</div>
-<div class="review-item"><strong>Sabbir:</strong> এই দামে এমন জিনিস পেয়ে আমি ভীষণ খুশি।</div>
-<div class="review-item"><strong>Shanto:</strong> ২৪ ঘন্টাই ব্যবহার করি, কোনো সমস্যা হয়নি, একদম সেফ।</div>
+            var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+            window.open(url, "_blank");
+        }
 
-<div class="review-item"><strong>Arman:</strong> কয়েকদিন ধরে টেস্ট করছি, এন্টি-ব্যান সত্যি সত্যি কাজ করে।</div>
-<div class="review-item"><strong>Rubel:</strong> গেম আপডেট হতেই দেড় ঘন্টার মধ্যে নতুন ফিচার চালু হয়ে যায়, একদম ফাটাফাটি।</div>
-<div class="review-item"><strong>Milton:</strong> একবার চালু করলে আর বন্ধ করার ইচ্ছাই হয় না।</div>
-<div class="review-item"><strong>Tamim:</strong> ভাই একদম গোল্ড লেভেল সার্ভিস, কৃতজ্ঞতা।</div>
-<div class="review-item"><strong>Nayeem:</strong> আমার আইডি এখনও সেফ আছে, হেডশটগুলো দারুণ লাগছে।</div>
 
-<div class="review-item"><strong>Sumon:</strong> লোকেশন ফিচার সবসময় সঠিক দেখায়, সত্যি মুগ্ধ।</div>
-<div class="review-item"><strong>Biplob:</strong> ফ্রিতে টেস্ট করার পরেই কিনেছি, টাকা উসুল হয়ে গেছে।</div>
-<div class="review-item"><strong>Anik:</strong> ব্যবহার সহজ, কোনো জটিলতা নাই, একদম ইউজার ফ্রেন্ডলি।</div>
-<div class="review-item"><strong>Mehedi:</strong> আমার ভাইও ব্যবহার করছে, আমরা দুজনেই খুশি।</div>
-<div class="review-item"><strong>Shuvo:</strong> প্রতিদিন খেলছি, কোনো সমস্যাই হয়নি এখনো।</div>
 
-<div class="review-item"><strong>Masum:</strong> এমন পার্মানেন্ট প্যানেল আগে দেখিনি, চমৎকার জিনিস।</div>
-<div class="review-item"><strong>Rakib:</strong> নতুন আপডেটে প্রথমে ভয় পেয়েছিলাম, কিন্তু সব ঠিকঠাক আছে।</div>
-<div class="review-item"><strong>Nahid:</strong> একদম দারুণ, কম টাকায় ভিআইপি ফিল পাচ্ছি।</div>
-<div class="review-item"><strong>Adnan:</strong> এইটা ছাড়া এখন আর গেম খেলতে ইচ্ছাই করে না।</div>
-<div class="review-item"><strong>Sajid:</strong> অসাধারণ ফিচার, এক কথায় বেস্ট।</div>
+        // Matrix animation
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+        let letters = "01".split("");
+        let fontSize = 16;
+        let columns = canvas.width / fontSize;
+        let drops = Array.from({ length: columns }, () => 1);
 
-<!-- 50 done above, continue with 51-100 -->
-<div class="review-item"><strong>Reza:</strong> লোকেশন একুরেট, হেডশট নির্ভুল, দুইটাই ব্যবহার করে আসল মজা পাই।</div>
-<div class="review-item"><strong>Jewel:</strong> আপডেট সাপোর্ট একদম ফাস্ট, গেম আপডেট হলেই সাথে সাথে চলে।</div>
-<div class="review-item"><strong>Shahin:</strong> টিমওয়ার্কে একদম লেজেন্ডারি সাহায্য করে লোকেশন ফিচার।</div>
-<div class="review-item"><strong>Maruf:</strong> একাউন্ট সেফ রাখার জন্য আলাদা কিছুই লাগে না, সব অটো।</div>
+        function draw() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "red";
+            ctx.font = fontSize + "px monospace";
 
-<div class="review-item"><strong>Antor:</strong> হেডশট ফিচার বন্ধ করলে গেম নরমাল থাকে, চাইলে ব্যালেন্সড খেলা যায়।</div>
-<div class="review-item"><strong>Tareq:</strong> একদম বাজেট ফ্রেন্ডলি প্যানেল, সবার জন্য বেস্ট।</div>
-<div class="review-item"><strong>Habib:</strong> আমি যতদিন ব্যবহার করেছি, একবারও ব্যান হইনি।</div>
-<div class="review-item"><strong>Emon:</strong> সত্যি বলছি, এত ভালো জিনিস এত কম দামে পাওয়া যাবে ভাবিনি।</div>
+            for (let i = 0; i < drops.length; i++) {
+                let text = letters[Math.floor(Math.random() * letters.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            }
+        }
+        setInterval(draw, 33);
 
-<div class="review-item"><strong>Foysal:</strong> গেমের আপডেট এলেই খুব দ্রুত কাজ শুরু হয়।</div>
-<div class="review-item"><strong>Hasib:</strong> প্রতিদিন ব্যবহার করছি, একদম চমৎকার।</div>
-<div class="review-item"><strong>Iqbal:</strong> আমার টিম এইটা ছাড়া গেম খেলতে চায় না।</div>
-<div class="review-item"><strong>Ridoy:</strong> ভাই একদম দারুণ, হেডশটের মজা অন্যরকম।</div>
-<div class="review-item"><strong>Rakibul:</strong> লোকেশন দেখে প্ল্যানিং করতে সুবিধা হয়।</div>
+        // Smooth counter
+        function animateCounter(elementId, targetValue, duration, label) {
+            const element = document.getElementById(elementId);
+            let startTime = null;
+            function updateCounter(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const progress = Math.min((timestamp - startTime) / duration, 1);
+                const current = Math.floor(progress * targetValue);
+                element.textContent = `${label}: ${current.toLocaleString()}+`;
+                if (progress < 1) requestAnimationFrame(updateCounter);
+                else element.textContent = `${label}: ${targetValue.toLocaleString()}+`;
+            }
+            requestAnimationFrame(updateCounter);
+        }
 
-<div class="review-item"><strong>Shamim:</strong> আমার অভিজ্ঞতায় এটা এখন পর্যন্ত সেরা প্যানেল।</div>
-<div class="review-item"><strong>Hridoy:</strong> কয়েকজনকে সাজেস্ট করেছি, সবাই খুশি।</div>
-<div class="review-item"><strong>Sabbir2:</strong> ব্যান হওয়ার ভয় নাই, নিশ্চিন্তে ব্যবহার করো।</div>
-<div class="review-item"><strong>Manik:</strong> একদম সেফলি খেলা যায়, দারুণ জিনিস।</div>
-<div class="review-item"><strong>Jony:</strong> অসাধারণ অভিজ্ঞতা, ধন্যবাদ ভাই।</div>
+        window.onload = () => {
+            animateCounter('activeUsers', 62000, 2500, 'Active Users');
+            animateCounter('downloads', 63000, 2500, 'Downloads');
+        }
 
-<div class="review-item"><strong>Ashik:</strong> লোকেশন ফিচার সবসময় সঠিকভাবে কাজ করছে।</div>
-<div class="review-item"><strong>Shafiq:</strong> আমার ছোট ভাইও ব্যবহার করছে, মজা পাচ্ছে।</div>
-<div class="review-item"><strong>Rasel2:</strong> আপডেট এলেও একদম ঠিকঠাক চলে।</div>
-<div class="review-item"><strong>Arif:</strong> সত্যি অসাধারণ, টাকা উসুল হয়ে গেছে।</div>
-<div class="review-item"><strong>Rubayat:</strong> ভাই হেডশট একদম পারফেক্ট।</div>
-
-<div class="review-item"><strong>Sami:</strong> একাউন্ট ওপেন করার পর থেকেই সব ফিচার এক্টিভ হয়ে গেছে।</div>
-<div class="review-item"><strong>Asif:</strong> আমি প্রতিদিন কয়েক ঘন্টা খেলি, কোনো ল্যাগ নাই।</div>
-<div class="review-item"><strong>Riyad:</strong> হেডশটের সঠিকতা দেখে অবাক হয়ে গেছি।</div>
-<div class="review-item"><strong>Mahin:</strong> লোকেশন একবারও ভুল দেখায়নি, দারুণ।</div>
-<div class="review-item"><strong>Sarif:</strong> এক কথায় অসাধারণ, খুব ভালো কাজ করছে।</div>
-
-<div class="review-item"><strong>Belal:</strong> আমার স্কোয়াডে সবাই এখন এটা ব্যবহার করছে।</div>
-<div class="review-item"><strong>Noman:</strong> ভিআইপি প্যানেল সত্যিই নামের মতো ভিআইপি।</div>
-<div class="review-item"><strong>Tanvir:</strong> সার্ভিস একদম ফাটাফাটি, খুশি হয়েছি।</div>
-<div class="review-item"><strong>Shahriar:</strong> আইডি কোনো সমস্যা হয়নি, নিরাপদ।</div>
-<div class="review-item"><strong>Azim:</strong> টাকার তুলনায় এটা অনেক বড় পাওয়া।</div>
-
-<div class="review-item"><strong>Foysal:</strong> গেমের আপডেট এলেই খুব দ্রুত কাজ শুরু হয়।</div>
-<div class="review-item"><strong>Hasib:</strong> প্রতিদিন ব্যবহার করছি, একদম চমৎকার।</div>
-<div class="review-item"><strong>Iqbal:</strong> আমার টিম এইটা ছাড়া গেম খেলতে চায় না।</div>
-<div class="review-item"><strong>Ridoy:</strong> ভাই একদম দারুণ, হেডশটের মজা অন্যরকম।</div>
-<div class="review-item"><strong>Rakibul:</strong> লোকেশন দেখে প্ল্যানিং করতে সুবিধা হয়।</div>
-
-<div class="review-item"><strong>Shamim:</strong> আমার অভিজ্ঞতায় এটা এখন পর্যন্ত সেরা প্যানেল।</div>
-<div class="review-item"><strong>Hridoy:</strong> কয়েকজনকে সাজেস্ট করেছি, সবাই খুশি।</div>
-<div class="review-item"><strong>Sabbir2:</strong> ব্যান হওয়ার ভয় নাই, নিশ্চিন্তে ব্যবহার করো।</div>
-<div class="review-item"><strong>Manik:</strong> একদম সেফলি খেলা যায়, দারুণ জিনিস।</div>
-<div class="review-item"><strong>Jony:</strong> অসাধারণ অভিজ্ঞতা, ধন্যবাদ ভাই।</div>
-
-<div class="review-item"><strong>Ashik:</strong> লোকেশন ফিচার সবসময় সঠিকভাবে কাজ করছে।</div>
-<div class="review-item"><strong>Shafiq:</strong> আমার ছোট ভাইও ব্যবহার করছে, মজা পাচ্ছে।</div>
-<div class="review-item"><strong>Rasel2:</strong> আপডেট এলেও একদম ঠিকঠাক চলে।</div>
-<div class="review-item"><strong>Arif:</strong> সত্যি অসাধারণ, টাকা উসুল হয়ে গেছে।</div>
-<div class="review-item"><strong>Rubayat:</strong> ভাই হেডশট একদম পারফেক্ট।</div>
-      <!-- (rest of your review items as-is) -->
-    </div>
-  </div>
-
-  <script>
-    function downloadNow() {
-      fbq('trackCustom', 'DownloadClicked');
-      window.location.href = "https://github.com/vippanel/Apk/raw/refs/heads/main/VIP_Panel.apk";
-    }
-
-    function openGuide() {
-      fbq('trackCustom', 'YouTubeClicked');
-      window.open('https://youtube.com/shorts/jj0rlk7witc?si=03kVs2kMpKYIYR1i', '_blank', 'noopener,noreferrer');
-    }
-
-    function reviewNow() {
-      alert("আপনি এখন পর্যন্ত একবারও VIP Panel টি ব্যবহার করেননি। রিভিউ করতে হলে আপনাকে VIP Panel টি একবার হলেও ব্যবহার করতে হবে।");
-    }
-
-    // Matrix animation
-    const canvas = document.getElementById('matrix');
-    const ctx = canvas.getContext('2d');
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
-    let letters = "01".split("");
-    let fontSize = 16;
-    let columns = canvas.width / fontSize;
-    let drops = Array.from({length: columns}, () => 1);
-
-    function draw() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "red";
-      ctx.font = fontSize + "px monospace";
-
-      for (let i = 0; i < drops.length; i++) {
-        let text = letters[Math.floor(Math.random() * letters.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
-        drops[i]++;
-      }
-    }
-    setInterval(draw, 33);
-
-    // Smooth counter
-    function animateCounter(elementId, targetValue, duration, label) {
-      const element = document.getElementById(elementId);
-      let startTime = null;
-      function updateCounter(timestamp) {
-        if (!startTime) startTime = timestamp;
-        const progress = Math.min((timestamp - startTime) / duration, 1);
-        const current = Math.floor(progress * targetValue);
-        element.textContent = `${label}: ${current.toLocaleString()}+`;
-        if (progress < 1) requestAnimationFrame(updateCounter);
-        else element.textContent = `${label}: ${targetValue.toLocaleString()}+`;
-      }
-      requestAnimationFrame(updateCounter);
-    }
-
-    window.onload = () => {
-      animateCounter('activeUsers', 62000, 2500, 'Active Users');
-      animateCounter('downloads', 63000, 2500, 'Downloads');
-    }
-
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      columns = canvas.width / fontSize;
-      drops = Array.from({length: columns}, () => 1);
-    });
-  </script>
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            columns = canvas.width / fontSize;
+            drops = Array.from({ length: columns }, () => 1);
+        });
+    </script>
 </body>
+
 </html>
-
-
